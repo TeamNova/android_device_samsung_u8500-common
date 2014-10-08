@@ -79,7 +79,6 @@ WIFI_DRIVER_MODULE_ARG           := "firmware_path=/system/etc/wifi/bcmdhd_sta.b
 WIFI_DRIVER_MODULE_AP_ARG        := "firmware_path=/system/etc/wifi/bcmdhd_apsta.bin nvram_path=/system/etc/wifi/nvram_net.txt"
 BOARD_LEGACY_NL80211_STA_EVENTS  := true
 BOARD_NO_APSME_ATTR              := true
-ANDROID_P2P                      := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -115,7 +114,9 @@ BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_SUPPRESS_EMMC_WIPE := true
 BOARD_RECOVERY_SWIPE := true
-RECOVERY_FSTAB_VERSION := 2
+
+# External apps on SD
+TARGET_EXTERNAL_APPS = sdcard1
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
@@ -141,6 +142,3 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/u8500-common
 
 # Misc
 COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
-
-# External apps on SD
-TARGET_EXTERNAL_APPS = sdcard1
